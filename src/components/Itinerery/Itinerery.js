@@ -1,13 +1,12 @@
 import React from 'react';
 import Leg from '../Leg/Leg';
 import STYLES from './Itinerery.scss';
+import flights from '../../data/flights.json';
 
 const getClassName = className => STYLES[className] || 'UNKNOWN';
 
 const Itinerary = (props) => {
-    console.log("-----Itinerary-----");
-    console.log(props);
-    console.log("-----EItinerary-----");
+
     let results = null;
     //as legs has subarray loop through it to get relavant details
     let legs = props.legs.map((legId, i) => {
@@ -15,8 +14,6 @@ const Itinerary = (props) => {
         results = flights.legs.filter(LegDetails => {
             return LegDetails.id === legId
         }).map(function (LegDetails) {
-            //console.log(LegDetails);
-            // return <Leg key={legId} departure_airport={LegDetails.departure_airport}>TTR</Leg>;
             return <Leg
                 key={legId}
                 id={legId}
@@ -35,25 +32,11 @@ const Itinerary = (props) => {
             }, []);
         });
 
-        // results.map((LegDetails, j) => {
-
-        //   console.log(legId);
-        //   return <Leg
-        //     key={legId}
-        //     id={legId}
-        //     departure_airport={LegDetails.departure_airport}
-        //     arrival_airport={LegDetails.arrival_airport}
-        //     arrival_time={LegDetails.arrival_time}
-        //     stops={LegDetails.stops}
-        //     airline_name={LegDetails.airline_name}
-        //     airline_id={LegDetails.airline_id}
-        //     duration_mins={LegDetails.duration_mins}
-        //   />
-        // });
-
-            console.log(results);
+        console.log("-----Itinerary-----");
+        console.log(results);
+        console.log("-----EItinerary-----");
        return <div className={getClassName('Itinerery')}>
-               
+               {legs}
            </div>
        ;
 }
