@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import Aux from '../hoc/Aux';
 import Itinerery from '../components/Itinerery/Itinerery';
 import flights from '../data/flights.json';
-//console.log(flights);
+import STYLES from '../containers/Itineraries.scss';
 
+const getClassName = className => STYLES[className] || 'UNKNOWN';
 class Itineraries extends Component {
     render() {
 
       const iternary = flights.itineraries.map((FlightDetails, index)=> {
-console.log(index);
+
         return <Itinerery 
                   key={index}
                   id={index}
@@ -21,7 +22,7 @@ console.log(index);
 
         return(
           <Aux>
-            <div>{iternary}</div>
+            <div className={getClassName('Itineraries')}>{iternary}</div>
           </Aux>
         );
     }
