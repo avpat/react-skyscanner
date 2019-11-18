@@ -5,11 +5,12 @@ import flights from '../data/flights.json';
 import STYLES from '../containers/Itineraries.scss';
 
 const getClassName = className => STYLES[className] || 'UNKNOWN';
+
 class Itineraries extends Component {
     render() {
 
       const iternary = flights.itineraries.map((FlightDetails, index)=> {
-
+//console.log(FlightDetails);
         return <Itinerery 
                   key={index}
                   id={index}
