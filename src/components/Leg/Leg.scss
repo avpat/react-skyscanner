@@ -1,3 +1,56 @@
-.Leg {
-    background-color: #cccccc;
+.Card {
+    .Leg {
+        width: 100%;
+        height: auto;
+        overflow: scroll;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .AirlineLogo {
+           background-image: url(../../assets/airline-logo--easyjet.png);
+           background-repeat: no-repeat;
+           width: 24px;
+           height: 24px;
+           margin: 10px 0;
+        }
+        .Departure, .Arrival {
+            display: flex;
+            flex-flow: column;
+            text-align: center;
+            .LegText {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        .ArrowRight {
+
+            background-image: url(../../assets/long-arrow-right--lg.png);
+            background-repeat: no-repeat;
+            width: auto;
+            margin: 10px 0;
+            padding: 10px;
+            text-align: center;
+        }
+        .Details {
+            .Duration {
+
+            }
+            .Stops {
+                
+            }
+        }
+
+        .WZ {
+            width: 5%; 
+        }
+        .BA {
+            width: 5%; 
+        }
+
+        .LH {
+            width: 5%; 
+        }
+    }
 }

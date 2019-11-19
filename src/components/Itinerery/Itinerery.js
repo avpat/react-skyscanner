@@ -32,11 +32,8 @@ const Itinerary = (props) => {
             }, []);
         });
 
-        console.log("-----Itinerary-----");
-        console.log(results);
-        console.log("-----EItinerary-----");
-       return <div className={getClassName('Itinerery')}>
-               {legs}
+       return <div className={getClassName('Results')}>
+                <div className={getClassName('Itinerery')}>{results}</div>
            </div>
        ;
 }
