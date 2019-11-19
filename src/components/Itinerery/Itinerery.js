@@ -14,6 +14,12 @@ const Itinerary = (props) => {
         results = flights.legs.filter(LegDetails => {
             return LegDetails.id === legId
         }).map(function (LegDetails) {
+            //convert minutes into human readable
+            let hours = (LegDetails.duration_mins / 60);
+            let rhours = Math.floor(hours);
+            let minutes = (hours - rhours) * 60;
+            let rminutes = Math.round(minutes);
+
             return <Leg
                 key={legId}
                 id={legId}
@@ -24,13 +30,14 @@ const Itinerary = (props) => {
                 stops={(LegDetails.stops == 0 )? 'Direct': LegDetails.stops +' stops' }
                 airline_name={LegDetails.airline_name}
                 airline_id={LegDetails.airline_id}
-                duration_mins={LegDetails.duration_mins}
+                duration_mins={rhours +':'+ rminutes}
             />
         }).reduce(
             (arr, el) => {
                 return arr.concat(el)
             }, []);
         });
+
 
        return <div className={getClassName('Results')}>
                 <div className={getClassName('Itinerery')}>{results}</div>

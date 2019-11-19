@@ -34,11 +34,14 @@
             text-align: center;
         }
         .Details {
+            display: flex;
+            flex-flow: column;
+            text-align: center;
             .Duration {
-
+                font-size: 0.6rem;
             }
             .Stops {
-                
+                color: aquamarine;
             }
         }
 
