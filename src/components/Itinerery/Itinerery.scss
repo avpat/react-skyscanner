@@ -1,5 +1,16 @@
+@import '~bpk-mixins';
 .Results {
-    .Itinerary {
-
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;  
+    margin: $bpk-spacing-sm;
+    padding: $bpk-spacing-sm;
+    align-items: center;
+  @include bpk-border-radius-sm;
+  @include bpk-box-shadow-sm;
+    .Itinerery {
+        display:inline-block;
+        margin: auto;
+        width: 100%;
     }
 }

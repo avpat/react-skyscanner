@@ -21,7 +21,7 @@ const Itinerary = (props) => {
                 arrival_airport={LegDetails.arrival_airport}
                 departure_time= {String(LegDetails.departure_time).slice(11, 16)}
                 arrival_time= {String(LegDetails.arrival_time).slice(11, 16)}
-                stops={(LegDetails.stops == 1 )? 'Direct': LegDetails.stops +' stops' }
+                stops={(LegDetails.stops == 0 )? 'Direct': LegDetails.stops +' stops' }
                 airline_name={LegDetails.airline_name}
                 airline_id={LegDetails.airline_id}
                 duration_mins={LegDetails.duration_mins}
