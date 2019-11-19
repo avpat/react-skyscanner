@@ -13,15 +13,18 @@
            background-repeat: no-repeat;
            width: 24px;
            height: 24px;
-           margin: 10px 0;
+           margin: 4px 0;
         }
         .Departure, .Arrival {
             display: flex;
             flex-flow: column;
             text-align: center;
-            .LegText {
+            .LegText, .AirportText {
                 flex-direction: column;
                 text-align: center;
+            }
+            .AirportText {
+                color: #b9b6c3;
             }
         }
         .ArrowRight {
@@ -39,21 +42,17 @@
             text-align: center;
             .Duration {
                 font-size: 0.6rem;
+                color: #b9b6c3;
             }
-            .Stops {
-                color: aquamarine;
+            .Direct {
+                color: #00a698;
             }
-        }
-
-        .WZ {
-            width: 5%; 
-        }
-        .BA {
-            width: 5%; 
-        }
-
-        .LH {
-            width: 5%; 
+            .Indirect {
+                color: #e7a0ac;
+            }
         }
     }
+}
+.Card:hover {
+    background-color: #e7e7e7;
 }

@@ -12,5 +12,30 @@
         display:inline-block;
         margin: auto;
         width: 100%;
+        .OrderDetails {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            text-align: center;
+            .Price , .AgentDetails {
+                flex-flow: column;
+            }
+            .AgentDetails{
+                color: #b9b6c3;
+              }
+            .OrderButton {
+                flex-flow: row;
+                display: block;
+                font: inherit;
+                padding: 5px;
+                margin: 0 5px;
+                width: 80px;
+                background-color: #00a698;
+                border: 1px solid #00a698;
+                color: #ffffff;
+                cursor: pointer;
+                outline: none;
+            }
+        }
     }
 }

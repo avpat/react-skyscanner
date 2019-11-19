@@ -27,10 +27,11 @@ const Itinerary = (props) => {
                 arrival_airport={LegDetails.arrival_airport}
                 departure_time= {String(LegDetails.departure_time).slice(11, 16)}
                 arrival_time= {String(LegDetails.arrival_time).slice(11, 16)}
-                stops={(LegDetails.stops == 0 )? 'Direct': LegDetails.stops +' stops' }
+                stops={(LegDetails.stops == 0 )? 'Direct': LegDetails.stops +' stop' }
+                stop_class={(LegDetails.stops == 0 )? 'Direct': 'Indirect' }
                 airline_name={LegDetails.airline_name}
                 airline_id={LegDetails.airline_id}
-                duration_mins={rhours +':'+ rminutes}
+                duration_mins={rhours +'h '+ rminutes}
             />
         }).reduce(
             (arr, el) => {
@@ -40,7 +41,15 @@ const Itinerary = (props) => {
 
 
        return <div className={getClassName('Results')}>
-                <div className={getClassName('Itinerery')}>{results}</div>
+                <div className={getClassName('Itinerery')}>
+                    {results}
+                    <div className={getClassName('OrderDetails')}>
+                        <div className={getClassName('Price')}>{props.price}</div>
+                        <div className={getClassName('AgentDetails')}>{props.agent}</div>
+                        <button className={getClassName('OrderButton')}>Select</button>
+                    </div>
+                </div>
+                
            </div>
        ;
 }
